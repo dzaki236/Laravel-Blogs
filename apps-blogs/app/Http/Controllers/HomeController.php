@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -13,10 +14,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest');
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -31,5 +33,10 @@ class HomeController extends Controller
         } else {
             return view('main.index', ['post' => Post::where('archive', '=', 'false')->get()]);
         }
+    }
+    public function post($title,$id)
+    {
+        # code...
+        return view('main.post',['post'=>Post::where('title','=',$title)->first(),'comments'=>Comment::where('id_post','=',$id)->get()]);
     }
 }

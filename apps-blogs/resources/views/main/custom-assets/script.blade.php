@@ -9,3 +9,13 @@
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  <!-- Custom scripts for all pages-->
  <script src="js/sb-admin-2.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+       $('#comment').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 250,
+        toolbar: [
+          ['font', ['bold', 'underline', 'clear']]]
+      });
+</script>

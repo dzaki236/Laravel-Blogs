@@ -9,6 +9,7 @@ class Post extends Model
 {
     use HasFactory;
     protected $fillable = ['id_user','title','image','content','archive','id_categories'];
+    protected $with = ['creator','category'];
     public function creator()
     {
         # code...
@@ -18,5 +19,10 @@ class Post extends Model
     {
         # code...
         return $this->belongsTo(Category::class,'id_categories','id');
+    }
+    public function manycomments()
+    {
+        # code...
+        return $this->hasMany(Comment::class,'id_post');
     }
 }
