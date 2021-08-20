@@ -30,6 +30,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/{judul}-id={id}', [HomeController::class, 'post'])->name('detail_post');
 Route::get('/admin',[AdminController::class,'index'])->name('dashboard')->middleware('role:admin');
 Route::get('/writter-dashboard', [WritterController::class, 'index'])->name('writter-dashboard')->middleware('role:writters');
+Route::get('/post-writter={id}', [WritterController::class, 'post'])->name('post-dashboard')->middleware('role:writters');
 Route::post('/comment',[CommentController::class,'comment'])->name('comment');
 Route::delete('/delete-comment/{id}',[CommentController::class,'delete_comment'])->name('delete-comment');
 Route::put('/change-role/{id}',[UserController::class,'change_role'])->name('edit-role');
@@ -46,5 +47,7 @@ Route::get('/clear',function(){
     Artisan::call('cache:clear');
     Artisan::call('route:clear');
     Artisan::call('config:clear');
-    dd('cleared!');
+    Artisan::call('view:clear');
+
+    // dd('cleared!');
 });

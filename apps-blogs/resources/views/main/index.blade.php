@@ -12,10 +12,10 @@
                             <div class="card-body">
                                 <h5 class="card-title text-dark font-weight-bolder">{{ $post->title }}</h5>
                                 <p class="card-text w-50 text-secondary" style="overflow: hidden;
-                            text-overflow: ellipsis;   white-space: nowrap; ">{{ $post->content }}</p>
+                            text-overflow: ellipsis; white-space: nowrap; ">{!! $post->content !!}</p>
                                 <div class="row text-center">
-                                    <div class="col-6">{{ $post->created_at->diffForHumans() }}</div>
-                                    <div class="col-6">{{ $post->creator->name }}</div>
+                                    <div class="col-6">Release : {{ $post->created_at->diffForHumans() }}</div>
+                                    <div class="col-6">Writters : {{ $post->creator->name }}</div>
                                 </div>
                             </div>
                         </div>

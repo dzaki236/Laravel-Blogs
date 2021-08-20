@@ -3,7 +3,7 @@
 
 <head>
     <!-- Head here -->
-    @include('main.custom-assets.head')
+    @include('dashboard.writters.custom-assets.head')
 </head>
 
 <body id="page-top">
@@ -22,7 +22,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @include('main.layouts.navbar')
+                @include('dashboard.writters.layouts.navbar')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -38,7 +38,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            @include('main.layouts.footer')
+            @include('dashboard.writters.layouts.footer')
             <!-- End of Footer -->
 
         </div>

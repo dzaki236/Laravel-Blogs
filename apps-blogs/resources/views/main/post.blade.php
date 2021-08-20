@@ -1,6 +1,14 @@
 @extends('main.layouts.master')
 @section('title', $post->title)
 @section('content')
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Post</li>
+      <li class="breadcrumb-item active" aria-current="page">{{ $post->title }}</li>
+
+    </ol>
+  </nav>
     <div class="card">
         <img src="{{ $post->image }}" class="img-responsive" alt="...">
         <div class="card-body">
@@ -9,8 +17,9 @@
             <p class="card-text w-50 text-secondary" style="overflow: hidden;
                         text-overflow: ellipsis;   white-space: nowrap; ">{!! $post->content !!}</p>
             <div class="row text-center">
-                <div class="col-6">{{ $post->created_at->diffForHumans() }}</div>
-                <div class="col-6">{{ $post->creator->name }}</div>
+                <div class="col-4">{{ $post->created_at->diffForHumans() }}</div>
+                <div class="col-4">{{ $post->creator->name }}</div>
+                <div class="col-4">{{ $post->category->categories }}</div>
             </div>
         </div>
 
