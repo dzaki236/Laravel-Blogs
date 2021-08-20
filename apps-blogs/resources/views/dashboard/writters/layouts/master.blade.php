@@ -12,7 +12,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        {{-- @include('main.layouts.sidebar') --}}
+        @include('dashboard.writters.layouts.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -53,10 +53,10 @@
     </a>
 
     <!-- Logout Modal-->
-    @include('main.layouts.modals')
+    @include('dashboard.writters.layouts.logout')
 
     <!-- Custom script -->
-    @include('main.custom-assets.script')
+    @include('dashboard.writters.custom-assets.script')
 </body>
 
 </html>

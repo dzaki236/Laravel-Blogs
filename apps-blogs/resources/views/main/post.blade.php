@@ -32,8 +32,6 @@
                 <p>{{ $komen->created_at->diffForHumans() }}</p>
                 @if (Auth::check())
                     @if (Auth::user()->id == $komen->users->id)
-
-
                         <form action="{{ route('delete-comment', $komen->id) }}" class="form-inline" method="post" onsubmit="return confirm('are u sure to delete comment?')">
                             @csrf
                             @method('DELETE')

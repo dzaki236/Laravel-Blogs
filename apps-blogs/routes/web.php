@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WritterController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -28,10 +29,10 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/{judul}-id={id}', [HomeController::class, 'post'])->name('detail_post');
 Route::get('/admin',[AdminController::class,'index'])->name('dashboard')->middleware('role:admin');
-// Route::get('/my-dashboard/id/{id}', [UserController::class, 'edit_profile'])->name('my-dashboard');
+Route::get('/writter-dashboard', [WritterController::class, 'index'])->name('writter-dashboard')->middleware('role:writters');
 Route::post('/comment',[CommentController::class,'comment'])->name('comment');
 Route::delete('/delete-comment/{id}',[CommentController::class,'delete_comment'])->name('delete-comment');
-
+Route::put('/change-role/{id}',[UserController::class,'change_role'])->name('edit-role');
 // Route::get('/logout', function(){
 //     Auth::logout();
 //     return redirect('/');
