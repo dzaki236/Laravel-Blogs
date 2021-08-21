@@ -17,7 +17,7 @@ class WritterController extends Controller
     public function index()
     {
         # code...
-        return view('dashboard.writters.index',['post_count'=>Post::where('id_user','=',Auth::user()->id)->count()]);
+        return view('dashboard.writters.index',['post'=>Post::where('id_user','=',Auth::user()->id)->count()]);
     }
    
 }

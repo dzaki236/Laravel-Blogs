@@ -32,7 +32,7 @@ class HomeController extends Controller
         if ($request->search) {
             return view('main.index', ['post' => Post::where('title', 'like', '%' . $request->search . '%')->get()]);
         } else {
-            return view('main.index', ['post' => Post::where('archive', '=', 'false')->get()]);
+            return view('main.index', ['post' => Post::all()]);
         }
     }
     public function post($title,$id)
