@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->enum('role',['admin','readers','writters'])->default('readers');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

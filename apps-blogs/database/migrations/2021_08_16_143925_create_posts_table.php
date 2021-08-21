@@ -20,10 +20,10 @@ class CreatePostsTable extends Migration
             $table->string('title',200);
             $table->string('image');
             $table->longText('content');
-            $table->enum('archive',['true','false'])->default('false');
             $table->bigInteger('id_categories')->unsigned();
             $table->foreign('id_categories')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
