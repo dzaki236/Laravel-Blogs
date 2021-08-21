@@ -25,37 +25,23 @@
     <div class="sidebar-heading">
         Interface
     </div>
- <!-- Nav Item - Utilities Collapse Menu -->
- <li class="nav-item">
-    <a class="nav-link {{ Request::is('post-writter') ? '' : 'collapsed' }}" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-        aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-database"></i>
-        <span>Data Master</span>
-    </a>
-    <div id="collapseUtilities" class="collapse {{ Request::is('post-writter') ? 'show' : '' }}" aria-labelledby="headingUtilities"
-        data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Data :</h6>
-            <a class="collapse-item {{ Request::is('post-writter') ? 'active' : '' }}" href="{{ route('post_dashboard') }}">Postingan</a>
-            <a class="collapse-item" href="utilities-border.html">Komentar</a>
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link {{ Request::is('post-writter') ? '' : 'collapsed' }}" href="#" data-toggle="collapse"
+            data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-database"></i>
+            <span>Data Master</span>
+        </a>
+        <div id="collapseUtilities" class="collapse {{ Request::is('post-writter') ? 'show' : '' }}"
+            aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Data :</h6>
+                <a class="collapse-item {{ Request::is('post-writter') ? 'active' : '' }}"
+                    href="{{ route('post_dashboard') }}">Postingan</a>
+                <a class="collapse-item" href="utilities-border.html">Komentar</a>
+            </div>
         </div>
-    </div>
-</li>
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
     </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
-    </li>
-
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
