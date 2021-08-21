@@ -6,6 +6,7 @@ use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Throwable;
 
 class HomeController extends Controller
 {
@@ -37,6 +38,9 @@ class HomeController extends Controller
     public function post($title,$id)
     {
         # code...
-        return view('main.post',['post'=>Post::where('title','=',$title)->first(),'comments'=>Comment::where('id_post','=',$id)->get()]);
+        $comment = Comment::where('id_post','=',$id)->get();
+        $post = Post::where('title','=',$title)->first();
+        // dd($comment->id_post);
+        return view('main.post',['comments'=>$comment,'post'=>$post]);
     }
 }

@@ -2,8 +2,6 @@
 @section('title', 'LaraBlogs Writters Dashboard')
 @section('content')
 <div class="row">
-    {{@foreach ($post as $post)
-    {{ $post->title }}
-    @endforeach}}
+   {{$post}}
 </div>
 @endsection

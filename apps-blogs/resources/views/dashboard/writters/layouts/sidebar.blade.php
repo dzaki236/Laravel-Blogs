@@ -12,8 +12,8 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item {{ Route::is('writter-dashboard') ? 'active' : '' }}">
-        <a class="nav-link" href="index.html">
+    <li class="nav-item {{ Request::is('writter-dashboard') ? 'active' : '' }}">
+        <a class="nav-link" href="/writter-dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -27,16 +27,16 @@
     </div>
  <!-- Nav Item - Utilities Collapse Menu -->
  <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+    <a class="nav-link {{ Request::is('post-writter') ? '' : 'collapsed' }}" href="#" data-toggle="collapse" data-target="#collapseUtilities"
         aria-expanded="true" aria-controls="collapseUtilities">
         <i class="fas fa-fw fa-database"></i>
         <span>Data Master</span>
     </a>
-    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+    <div id="collapseUtilities" class="collapse {{ Request::is('post-writter') ? 'show' : '' }}" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Data :</h6>
-            <a class="collapse-item" href="utilities-color.html">Postingan</a>
+            <a class="collapse-item {{ Request::is('post-writter') ? 'active' : '' }}" href="{{ route('post_dashboard') }}">Postingan</a>
             <a class="collapse-item" href="utilities-border.html">Komentar</a>
         </div>
     </div>
