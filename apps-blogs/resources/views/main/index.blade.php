@@ -7,7 +7,7 @@
                 <div class="col-12 col-xl-4 col-lg-3 col-md-6 mb-4">
                     <a href="{{ url($post->title.'-c_id='.$post->id) }}" class="text-decoration-none">
                         <div class="card">
-                            <img src="{{ $post->image }}" class="img-responsive"
+                            <img src="{{ Storage::url('public/img/post/').$post->image }}" class="img-responsive"
                                 style="width: 100%;height:15em;object-fit:cover;" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-dark font-weight-bolder">{{ $post->title }}</h5>

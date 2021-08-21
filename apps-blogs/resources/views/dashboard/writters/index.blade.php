@@ -2,6 +2,6 @@
 @section('title', 'LaraBlogs Writters Dashboard')
 @section('content')
 <div class="row">
-    {{ $post_count }}
+    {{ $post }}
 </div>
 @endsection

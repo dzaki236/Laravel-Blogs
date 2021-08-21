@@ -10,7 +10,7 @@
     </ol>
   </nav>
     <div class="card">
-        <img src="{{ $post->image }}" class="img-responsive" alt="...">
+        <img src="{{ Storage::url('public/img/post/').$post->image }}" class="img-responsive" alt="...">
         <div class="card-body">
             <h1 class="card-title text-dark font-weight-bolder">{{ $post->title }}</h1>
             <hr>
