@@ -62,7 +62,7 @@
                     @if (Auth::user()->role == 'readers')
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#writtersmodals">
                             <i class="fas fa-pencil-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                            Changes users to writters
+                            Mulai Membuat Postingan
                         </a>
                     @endif
                     @if(Auth::user()->role == 'writters')
